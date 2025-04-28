@@ -1,28 +1,23 @@
 return {
-  {
-    "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
-    opts = require "configs.conform",
-  },
-
-  -- These are some examples, uncomment them if you want to see them work!
+  -- overrides
   {
     "neovim/nvim-lspconfig",
     config = function()
       require "configs.lspconfig"
     end,
   },
+  { "stevearc/conform.nvim", opts = require "configs.conform" },
+  { "nvim-telescope/telescope.nvim", opts = require "configs.telescope" },
+  { "nvim-treesitter/nvim-treesitter", opts = require "configs.treesitter" },
+  { "lukas-reineke/indent-blankline.nvim", opts = require "configs.indentblankline" },
+  { "nvim-tree/nvim-tree.lua", opts = require "configs.nvimtree" },
+  { "hrsh7th/nvim-cmp", opts = require "configs.cmp" },
+  { "lewis6991/gitsigns.nvim", opts = require "configs.gitsigns" },
 
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
-
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  -- disabled
+  { "folke/which-key.nvim", enabled = false },
+  { "NvChad/nvterm", enabled = false },
+  { "NvChad/nvim-colorizer.lua", enabled = false },
+  { "hrsh7th/cmp-buffer", enabled = false },
+  { "nvzone/minty", enabled = false },
 }
